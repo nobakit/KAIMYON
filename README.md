@@ -15,6 +15,10 @@ cd KAIMYON
 # イメージをビルドしてくる
 docker-compose build
 
+# npm installの実施
+cd frontend/frontend
+npm install
+
 # コンテナを起動
 docker-compose up -d
 
