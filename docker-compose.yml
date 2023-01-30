@@ -23,6 +23,8 @@ services:
     environment:
       MYSQL_DATABASE: 'django'
       MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+    platform:
+      linux/amd64
   frontend:
     container_name: frontend
     build: ./frontend
