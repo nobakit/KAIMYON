@@ -5,15 +5,15 @@ from django.db import models
 
 class KanjiSingle(models.Model):
     kanji = models.CharField(max_length=5, unique=True)
-    # tag_1 = models.SmallIntegerField(max_length=4)
-    # tag_2 = models.SmallIntegerField(max_length=4)
-    # tag_3 = models.SmallIntegerField(max_length=4)
+    # tag_1 = models.SmallIntegerField(max_length=4, null=False)
+    # tag_2 = models.SmallIntegerField(max_length=4, null=False)
+    # tag_3 = models.SmallIntegerField(max_length=4, null=False)
 
 class KanjiIdiom(models.Model):
     idiom = models.CharField(max_length=10, unique=True)
-    # tag_1 = models.SmallIntegerField(max_length=4)
-    # tag_2 = models.SmallIntegerField(max_length=4)
-    # tag_3 = models.SmallIntegerField(max_length=4)
+    # tag_1 = models.SmallIntegerField(max_length=4, null=False)
+    # tag_2 = models.SmallIntegerField(max_length=4, null=False)
+    # tag_3 = models.SmallIntegerField(max_length=4, null=False)
 
 class Tag(models.Model):
     tag_name = models.CharField(max_length=30, unique=True)
