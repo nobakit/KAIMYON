@@ -1,0 +1,228 @@
+[
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "並",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "力",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "愛",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "歌",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "海",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "空",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "虚",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "豪",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "闇",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjisingle",
+        "pk": "騒",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjiidiom",
+        "pk": "勇者",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjiidiom",
+        "pk": "熱血",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjiidiom",
+        "pk": "爽快",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjiidiom",
+        "pk": "空腹",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjiidiom",
+        "pk": "邪神",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.kanjiidiom",
+        "pk": "魔王",
+        "fields": {}
+    },
+    {
+        "model": "kaimyon.tag",
+        "pk": 1,
+        "fields": {
+            "tag_name": "強そう"
+        }
+    },
+    {
+        "model": "kaimyon.tag",
+        "pk": 2,
+        "fields": {
+            "tag_name": "弱そう"
+        }
+    },
+    {
+        "model": "kaimyon.tag",
+        "pk": 3,
+        "fields": {
+            "tag_name": "かわいい"
+        }
+    },
+    {
+        "model": "kaimyon.tag",
+        "pk": 4,
+        "fields": {
+            "tag_name": "キラキラ"
+        }
+    },
+    {
+        "model": "kaimyon.tag",
+        "pk": 5,
+        "fields": {
+            "tag_name": "普通"
+        }
+    },
+    {
+        "model": "kaimyon.tag",
+        "pk": 6,
+        "fields": {
+            "tag_name": "厨二病"
+        }
+    },
+    {
+        "model": "kaimyon.kanjitagrelation",
+        "pk": 1,
+        "fields": {
+            "kanji": "豪",
+            "tag": 1
+        }
+    },
+    {
+        "model": "kaimyon.kanjitagrelation",
+        "pk": 2,
+        "fields": {
+            "kanji": "虚",
+            "tag": 2
+        }
+    },
+    {
+        "model": "kaimyon.kanjitagrelation",
+        "pk": 3,
+        "fields": {
+            "kanji": "並",
+            "tag": 5
+        }
+    },
+    {
+        "model": "kaimyon.kanjitagrelation",
+        "pk": 4,
+        "fields": {
+            "kanji": "力",
+            "tag": 1
+        }
+    },
+    {
+        "model": "kaimyon.kanjitagrelation",
+        "pk": 5,
+        "fields": {
+            "kanji": "闇",
+            "tag": 6
+        }
+    },
+    {
+        "model": "kaimyon.kanjitagrelation",
+        "pk": 6,
+        "fields": {
+            "kanji": "虚",
+            "tag": 6
+        }
+    },
+    {
+        "model": "kaimyon.kanjitagrelation",
+        "pk": 7,
+        "fields": {
+            "kanji": "歌",
+            "tag": 3
+        }
+    },
+    {
+        "model": "kaimyon.kanjitagrelation",
+        "pk": 8,
+        "fields": {
+            "kanji": "愛",
+            "tag": 3
+        }
+    },
+    {
+        "model": "kaimyon.idiomtagrelation",
+        "pk": 1,
+        "fields": {
+            "idiom": "邪神",
+            "tag": 6
+        }
+    },
+    {
+        "model": "kaimyon.idiomtagrelation",
+        "pk": 2,
+        "fields": {
+            "idiom": "魔王",
+            "tag": 6
+        }
+    },
+    {
+        "model": "kaimyon.idiomtagrelation",
+        "pk": 3,
+        "fields": {
+            "idiom": "勇者",
+            "tag": 2
+        }
+    },
+    {
+        "model": "kaimyon.idiomtagrelation",
+        "pk": 4,
+        "fields": {
+            "idiom": "勇者",
+            "tag": 6
+        }
+    },
+    {
+        "model": "kaimyon.idiomtagrelation",
+        "pk": 5,
+        "fields": {
+            "idiom": "爽快",
+            "tag": 4
+        }
+    }
+]
