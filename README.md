@@ -27,6 +27,9 @@ docker exec -it backend bash
 python manage.py migrate
 python manage.py createsuperuser
 # 適当なrootユーザーを作ってパスワードを設定する
+
+# テストデータの投入
+python manage.py loaddata kaimyon/fixtures/test-data.json
 ```
 
 [http://localhost:8000/admin]() ←ログイン画面が出てくるはず<br>
