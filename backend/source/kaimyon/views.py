@@ -15,13 +15,20 @@ def index(response):
 
 
 class TestBackendView(TemplateView):
-    def get_kanji_single(self) -> list(str):
-        # DB operator
-        kanji_list = list(KanjiSingle.objects.all())
+    def get_kanji_single(self, tags=None):
+        if tags is None:
+            kanji_list = list(KanjiSingle.objects.all())
+        else:
+            kanjis = (
+                KanjiTagRelation.objects.all()
+                .select_related()
+                .filter(tag__tag_name__in=tags)
+            )
+            kanji_list = list(kanjis.values_list("kanji_id", flat=True))
         return kanji_list
 
-    def get_kanji_idiom(self, tags=None) -> list(str):
-        if tags is None:
+    def get_kanji_idiom(self, tags=None):
+        if tags is None or tags == "普通":
             idiom_list = list(KanjiIdiom.objects.all())
         else:
             idioms = (
@@ -33,7 +40,7 @@ class TestBackendView(TemplateView):
         return idiom_list
 
     def generate_kaimyou(self, input_name, tags) -> str:
-        # TODO: 戒名の出力文字数をconfigで指定
+        # 戒名の出力文字数
         len_kaimyou = 8
         kaimyou = []
 
@@ -43,8 +50,13 @@ class TestBackendView(TemplateView):
         # 熟語をランダムで取得
         num_idom = 2
         idioms = self.get_kanji_idiom(tags)
-        for i in range(num_idom):
-            kaimyou.append(random.choice(idioms))
+        if len(idioms) == 0:
+            # DBにタグに関連する熟語が存在しなければ代わりに単漢字を取得
+            kanji = random.choice(self.get_kanji_single(tags))
+            kaimyou.append(random.choice(kanji))
+        else:
+            for i in range(num_idom):
+                kaimyou.append(random.choice(idioms))
 
         num_single_kanji = len_kaimyou - len("".join(kaimyou))
 
@@ -59,7 +71,12 @@ class TestBackendView(TemplateView):
         return "".join(kaimyou)
 
     def get(self, request, *args, **kwargs):
-        kaimyou = self.generate_kaimyou("山田太郎", ["厨二病", "キラキラ"])
+        # http://localhost:8000/kaimyon/test_db_ope?name=山田太郎&tag=強そう&tag=キラキラ
+        name = request.GET.get("name")
+        tag = request.GET.getlist("tag")
+        # nameは空白削除の処理をかける
+        name = name.replace(" ", "").replace("　", "")
+        kaimyou = self.generate_kaimyou(name, tag)
         return HttpResponse(f"Your KAIMYOU: {kaimyou}")
 
 
